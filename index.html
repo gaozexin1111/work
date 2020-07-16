@@ -309,12 +309,13 @@
                         bannercon[i].style.zIndex = 0;
                         bannercon_btns[i].style.background="#aaa";
                     }
-                    animate(bannercon[num],{
-                        opacity:1
-                    },300,Tween.linear,function(){
-                        bannercon[num].style.zIndex = 1;
-                    })
-
+                    // animate(bannercon[num],{
+                    //     opacity:1
+                    // },300,Tween.linear,function(){
+                    //     bannercon[num].style.zIndex = 1;
+                    // })
+                    bannercon[num].style.opacity=1;
+                    // bannercon[num].style.zIndex = 1;
                     bannercon_btns[num].style.background="#555";
 
                 }
@@ -322,21 +323,26 @@
                 var bannercon_t = setInterval(bannercon_move,5000)
 
                 for(let i=0;i<bannercon_btns.length;i++){
+                    
                     bannercon_btns[i].onclick = function(){
                         num=i;
-                                      
+                                  
+                        console.log(i)
                         for(var j=0;j<bannercon_btns.length;j++){
                             
                             bannercon[j].style.opacity = 0;
-                            bannercon[j].style.zIndex = 0;
+                            // bannercon[j].style.zIndex = 0;
                             bannercon_btns[j].style.background="#aaa";
                         }
-                        animate(bannercon[num],{
-                            opacity:1
-                        },300,Tween.linear,function(){
-                            bannercon[num].style.zIndex = 1;
-                        })
-                        bannercon_btns[num].style.background="#555";
+                        // animate(bannercon[num],{
+                        //     opacity:1
+                        // },300,Tween.linear,function(){
+                        //     bannercon[num].style.zIndex = 1;
+                        // })   
+
+                        bannercon[i].style.opacity=1;
+                        // bannercon[i].style.zIndex = 1;
+                        bannercon_btns[i].style.background="#555";
                     }
                 }
 
