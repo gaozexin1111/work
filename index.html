@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- 导航栏开始 -->
-    <div id="site-nav" data-spm="a2226mz" role="navigation">
+    <div id="site-nav">
         
         <div id="sn-bd">
             <div class="sn-container">
@@ -218,45 +218,131 @@
                                 
                                 <b class="arrow"></b>
                             </li>
-                        
-                        
+                                                
                         </ul>
-
+                        <div class="xianshi">1</div>
+                        <div class="xianshi">2</div>
+                        <div class="xianshi">3</div>
+                        <div class="xianshi">4</div>
+                        <div class="xianshi">5</div>
+                        <div class="xianshi">6</div>
+                        <div class="xianshi">7</div>
+                        <div class="xianshi">8</div>
+                        <div class="xianshi">9</div>
+                        <div class="xianshi">10</div>
+                        <div class="xianshi">11</div>
+                        <div class="xianshi">12</div>
+                        <div class="xianshi">13</div>
+                        <div class="xianshi">14</div>
+                        <div class="xianshi">15</div>
+                        <div class="xianshi">16</div>
                     </div>
 
+                    <script src="css/aniMath.js"></script>
+                    <script>
+                        var ul_lists = document.querySelectorAll(".nav-item")
+                        var test = document.querySelectorAll(".xianshi")
+                        console.log(ul_lists.length);
+                        for(let i=0;i<test.length;i++){
+                            ul_lists[i].onmouseover = function(){
+                                test[i].style.opacity = 1;
+                            }
+                            ul_lists[i].onmouseout = function(){
+                                test[i].style.opacity = 0;
+                            }
+
+                        }
+
+
+
+                    </script>
                 </div>
 
             </div>
             
-            <!--  -->
-            <div class="banner-con j_mainBanner loading" data-spm="2016006">
-
-                <div class="banner-slider j_bannerSlider">
-                    <div class="slider-content loading">
-                        <div class="main-banner slider-pannel" style="background-color: #ccc; position: absolute;z-index: 1;opacity: 1;
-                        display: block;">
-                        <div style="width: 1230px; margin: 0 auto;">
-                            <img src="imgs/swipper.jpg" alt="">
-                        </div>
-                        </div>
-                        <div class="main-banner slider-pannel" style="background-color: rgb(215, 19, 59); position: absolute;z-index: 0;opacity: 0;
-                        display: none;">
-                        </div>
-                        <div class="main-banner slider-pannel" style="background-color: rgb(215, 19, 59); position: absolute;z-index: 0;opacity: 0;
-                        display: none;">
-                        </div>
-                        <div class="main-banner slider-pannel" style="background-color: rgb(215, 19, 59); position: absolute;z-index: 0;opacity: 0;
-                        display: none;">
-                        </div>
-                        <div class="main-banner slider-pannel" style="background-color: rgb(215, 19, 59); position: absolute;z-index: 0;opacity: 0;
-                        display: none;">
-                        </div>
-                        
-
-                    </div>
-                </div>
+            <!-- 轮播图开始 -->
+            <div class="banner-con">
+                <ul class="banner-con-wheel">
+                    <li>
+                        <a href=""></a> 
+                    </li>
+                    <li>
+                        <a href=""></a> 
+                    </li>
+                    <li>
+                        <a href=""></a> 
+                    </li>
+                    <li>
+                        <a href=""></a> 
+                    </li>
+                    <li>
+                        <a href=""></a> 
+                    </li>
+                    <li>
+                        <a href=""></a> 
+                    </li>
+                </ul>
+                <ul class="banner-con-btns">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                
             </div>
+            <script src="css/aniMath.js"></script>
+            <script>
+                var bannercon = document.querySelectorAll(".banner-con-wheel li");
+                var bannercon_btns = document.querySelectorAll(".banner-con-btns li")
 
+                var num = 0;
+                
+                function bannercon_move(){
+                    num++;
+                    if(num>bannercon.length-1){
+                        num=0;
+                    }
+                    for(var i=0;i<bannercon.length;i++){
+                        bannercon[i].style.opacity = 0;
+                        bannercon[i].style.zIndex = 0;
+                        bannercon_btns[i].style.background="#aaa";
+                    }
+                    animate(bannercon[num],{
+                        opacity:1
+                    },300,Tween.linear,function(){
+                        bannercon[num].style.zIndex = 1;
+                    })
+
+                    bannercon_btns[num].style.background="#555";
+
+                }
+                
+                var bannercon_t = setInterval(bannercon_move,5000)
+
+                for(let i=0;i<bannercon_btns.length;i++){
+                    bannercon_btns[i].onclick = function(){
+                        num=i;
+                        animate(bannercon[num],{
+                            opacity:1
+                        },50)                
+                        for(var j=0;j<bannercon_btns.length;j++){
+                            bannercon_btns[j].style.background="#aaa";
+                            bannercon[j].style.opacity = 0;
+                            bannercon[j].style.zIndex = 0;
+                        }
+                        animate(bannercon[num],{
+                            opacity:1
+                        },300,Tween.linear,function(){
+                            bannercon[num].style.zIndex = 1;
+                        })
+                        bannercon_btns[num].style.background="#555";
+                    }
+                }
+
+            </script>
+            <!-- 轮播图结束 -->
 
         </div>
         <!-- 第一部分结束 -->
@@ -727,8 +813,12 @@
                                         <img class="floor-arrow-big" src="https://img.alicdn.com/tfs/TB1IQBtXaagSKJjy0FbXXa.mVXa-68-68.png" alt="">
                                     </div>
                                 </div>
+
+
                                 <div class="middle-column-con">
-                                    <div class="grid two-grid">
+                                    
+                                    
+                                    <!-- <div class="grid two-grid">
                                         <div class="floor-tabs">
                                             <ul class="floor-tab-head">
                                                 <li>
@@ -762,8 +852,95 @@
 
                                             </div>
                                         </div>
+                                    </div> -->
+                                    <div class="box">
+                                        <div class="title">
+                                            <a href="javascript:;" style="background: #00b262; color: #fff;">今日疯抢</a>
+                                            <a href="javascript:;">量贩装</a>
+                                        </div>
+                                        <div class="con">
+                                            <div class="con-list">
+                                                <a href="#">
+                                                    <div class="right-detail">
+                                                        <div class="title-wrap">
+                                                            <img class="cla-icon" src="https://img.alicdn.com/tfs/TB12RqQewMPMeJjy1XdXXasrXXa-23-23.png" alt="" >
+                                                            <span class="tab-item-title">
+                                                                零食欢乐购
+                                                            <span>                                   
+                                                        </div>
+                                                        <div>
+                                                            <sapn class="tab-desp">
+                                                                爆款直降
+                                                            </sapn>
+                                                        </div>
+                                                    </div>
+                                                    <img class="item-img" src="https://img.alicdn.com/tfs/TB1_O_LgSrqK1RjSZK9XXXyypXa-400-400.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            
+                                            <div class="con-list" style="display: none;">
+                                                <a href="#">
+                                                    <div class="right-detail">
+                                                        <div class="title-wrap">
+                                                            <img class="cla-icon" src="https://img.alicdn.com/tfs/TB12RqQewMPMeJjy1XdXXasrXXa-23-23.png" alt="" >
+                                                            <span class="tab-item-title">
+                                                                爆款直降
+                                                            <span>                                   
+                                                        </div>
+                                                        <div>
+                                                            <sapn class="tab-desp">
+                                                                粮油调味
+                                                            </sapn>
+                                                        </div>
+                                                    </div>
+                                                    <img class="item-img" src="https://img.alicdn.com/tfs/TB1jNScP6TpK1RjSZKPXXa3UpXa-400-400.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            
+                                            
+                                        </div>
                                     </div>
-
+                                
+                                    <script>
+                                        var index=1;//用来判断转换
+                                        var links = document.querySelectorAll(".title a");
+                                        var lists = document.querySelectorAll(".con-list");
+                                        
+                                        for(let i=0;i<links.length;i++){
+                                
+                                            links[i].onclick = function(){
+                                                for(var j=0;j<lists.length;j++){
+                                                    lists[j].style.display="none";
+                                                    links[j].style.background="#ccc";
+                                                    links[j].style.color="#000";
+                                                }
+                                                lists[i].style.display="block";
+                                                links[i].style.color="#fff";
+                                                this.style.background="#00b262";
+                                                index++;
+                                            }
+                                        }
+                                
+                                
+                                        var change = function(){
+                                            //初始化
+                                            for(var j=0;j<lists.length;j++){
+                                                    lists[j].style.display="none";
+                                                    links[j].style.background="#ccc";
+                                                    links[j].style.color="#000";
+                                            }
+                                            var i=index % 2;
+                                                lists[i].style.display="block";
+                                                links[i].style.color="#fff";
+                                                links[i].style.background="#00b262";
+                                            // console.log(i);
+                                            index++;
+                                        }
+                                        setInterval(change,5000)
+                                    </script>
+                                    
+                                    
+                                    
                                     <a class="grid one-grid-price" href="#">
                                         <div class="floor-item-content-wrap">
                                             <div class="floor-item-tag color-type-green" style="visibility: hidden;"></div>
@@ -1049,5 +1226,55 @@
         </div>
       </div>
     <!-- 底部结束 -->
+
+
+    <!-- 搜索栏开始  -->
+    <div class="top-search">
+        <div class="top-search-banner">
+            <div class="top-search-left">
+                <input type="text" name="" id="" style="border: 0;">
+            </div>
+            <div class="top-search-right">搜索</div>
+        </div>
+    </div>
+
+
+    
+
+    <!-- 搜索栏结束 -->
+
+
+    <!-- 侧栏开始 -->
+    <div class="left-banner">
+        <div class="left-ban">导航</div>
+        <div class="left-ban">天猫超市</div>
+        <div class="left-ban">天猫国际</div>
+        <div class="left-ban">天猫超市</div>
+        <div class="left-ban">天猫国际</div>
+        <div class="left-ban">天猫超市</div>
+        <div class="left-ban">天猫国际</div>
+        <div class="left-ban">天猫超市</div>
+        <div class="left-ban">天猫国际</div>
+        <div class="left-ban">返回顶部</div>
+    </div>
+    <script>
+        var top_search = document.querySelector(".top-search")
+        var left_banner = document.querySelector(".left-banner")
+        window.onscroll = function(){
+            var st = document.documentElement.scrollTop
+            if(st>1000){
+                top_search.style.top=0;
+            }else{
+                top_search.style.top = -50+"px";
+            }
+
+            if(st>1500){
+                left_banner.style.transform="scale(1,1)";
+            }else{
+                left_banner.style.transform="scale(0,0)";
+            }
+        }
+    </script>
+    <!-- 侧栏结束 -->
 </body>
 </html>

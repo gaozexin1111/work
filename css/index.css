@@ -24,26 +24,29 @@ li{
     padding: 0;
 
 }
+body{
+    position: relative;
+}
 
 /* 导航栏开始 */
 #site-nav{
     height: 32px;
     font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
-    width: auto;
     position: relative!important;
     background: #f2f2f2;
     z-index: 99999;
     border-bottom: 1px solid #e5e5e5;
-    min-width: 990px;
+    width: 1230px;
+    margin: 0 auto;
 }
 #sn-bd{
     left: 0;
-    width: 982px;
+    width: 1320px;
     margin: auto;
 }
 .sn-container{
     height: 32px;
-    width: 100%;   
+    width: 500px;   
     color: #999;
     line-height: 32px;
 }
@@ -330,7 +333,6 @@ li{
 }
 .normal-nav {
     background-color: #000;
-    filter: "alpha(opacity=35)";
     background-color: rgba(0,0,0,.55);
     width: 200px;
     height: 500px;
@@ -367,39 +369,113 @@ li{
     font-family: fpIconFont!important;
 }
 
+/* 显示开始 */
+.xianshi{
+    width: 500px;
+    height: 500px;
+    background: orange;
+    position: absolute;
+    left: 200px;
+    top: 0;
+    opacity: 0;
+    font-size: 30px;
+}
+
+
+
+/* 显示结束 */
+
+
+
+/*  轮播图  */
 
 .banner-con {
     width: 100%;
     height: 500px;
     overflow: hidden;
     position: relative;
-    z-index: 0;
-}
-.slider-decoration {
-    display: none;
-    left: 50%;
-    position: absolute;
-    height: 100%;
-    width: 410px;
-    z-index: 100;
+    background: #ccc;
 }
 
-.banner-con .banner-slider {
-    height: 500px;
-}
-.slider-content {
+.banner-con-wheel{
+    width: 1230px;
+    height: 100%;
+    margin: 0 auto;
     position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    /* -webkit-backface-visibility: hidden; */
+    /* background: red; */
 }
-.main-banner {
+
+.banner-con-wheel li{
     width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.banner-con-wheel li a{
     display: block;
-    position: relative;
-    height: 500px;
+    width: 100%;
+    height: 100%;
 }
+
+.banner-con-wheel li:nth-child(1) {
+    z-index: 1;
+}
+
+.banner-con-wheel li:nth-child(1) a{
+    background-image: url(../imgs/tanmao_jiaju.jpg);
+    background-repeat: no-repeat;
+}
+.banner-con-wheel li:nth-child(2) a{
+    background-image: url(../imgs/tianmao_yifu.jpg);
+    background-repeat: no-repeat;
+}
+.banner-con-wheel li:nth-child(3) a{
+    background-image: url(../imgs/tianmao_mike.jpg);
+    background-repeat: no-repeat;
+}
+.banner-con-wheel li:nth-child(4) a{
+    background-image: url(../imgs/tianmao_shoes.jpg);
+    background-repeat: no-repeat;
+}
+.banner-con-wheel li:nth-child(5) a{
+    background-image: url(../imgs/tianmao_manclother.jpg);
+    background-repeat: no-repeat;
+}
+.banner-con-wheel li:nth-child(6) a{
+    background-image: url(../imgs/tianmao_man_shoes.jpg);
+    background-repeat: no-repeat;
+}
+
+
+.banner-con-btns{
+    width: 300px;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin: auto;
+    z-index: 2;
+}
+
+.banner-con-btns li{
+    width: 13%;
+    height: 50%;
+    background: #aaa;
+    margin-left: 3%;
+    cursor: pointer;
+    float: left;
+    box-shadow: 0 0 5px;
+}
+
+.banner-con-btns li:nth-child(1){
+    background: #555;
+}
+
+
+/* 轮播图结束 */
 
 /* 第二部分开始 */
 .activity-bg{
@@ -499,7 +575,7 @@ li{
     position: relative;
 }
 .module-body {
-    height: 327px;
+    height: 370px;
     width: 100%;
     overflow: hidden;
     background-color: #fff;
@@ -707,7 +783,9 @@ li{
     float: left;
     overflow: hidden;
 }
-.grid {
+
+/* **************************************** */
+/* .grid {
     float: left;
     display: block;
     border-bottom: 15px solid #f5f5f5;
@@ -796,7 +874,85 @@ li{
     margin-right: 30px;
     width: 200px;
     height: 200px;
+} */
+.box{
+    width: 462px;
+    height: 281px;
+    margin: 10px 13px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.09);
+    float: left;
 }
+.title{
+    width: 100%;
+    height: 57px;
+    background: #f1f1f1;
+}
+.title a{
+    text-decoration: none;
+    float: left;
+    color: #000;
+    height: 57px;
+    width: 231px;
+    cursor: pointer;
+    line-height: 57px;
+    padding: 0 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.con{
+    width: 100%;
+    height: 225px;
+    overflow: hidden;
+
+}
+.right-detail {
+    position: absolute;
+    top: 153px;
+    height: 87px;
+    width: 291px;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-color: rgba(0,0,0,0);
+    background-image: url(https://img.alicdn.com/tfs/TB1AnTXewMPMeJjy1XcXXXpppXa-290-87.png);
+    z-index: 99;
+}
+.title-wrap {
+    margin-left: 26px;
+    margin-top: 8px;
+    vertical-align: middle!important;
+}
+.cla-icon {
+    width: 23px;
+    height: 23px;
+    margin-top: -10px;
+}
+
+.tab-item-title {
+    margin-left: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #00b262;
+}
+.tab-desp {
+    margin-left: 26px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #000;
+}
+.item-img {
+    float: right;
+    margin-top: 10px;
+    margin-right: 30px;
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
 .grid {
     float: left;
     display: block;
@@ -981,3 +1137,75 @@ li{
   
 
 /* 底部结束 */
+
+
+/* 搜索栏开始 */
+
+.top-search{
+    width: 100%;
+    height: 40px;
+    background: red;
+    position: fixed;
+    top: -50px;
+    transition: top 0.3s ease;
+    z-index: 33333;
+}
+
+.top-search-banner{
+    width: 740px;
+    height: 40px;
+    margin: 0 auto;
+    /* background: orange; */
+}
+
+.top-search-left{
+    width: 648px;
+    height: 30px;
+    border: 1px solid red;
+    margin:5px auto;
+    float: left;
+    background: #fff;
+}
+
+.top-search-right{
+    
+    width: 90px;
+    height: 30px;
+    border: 0;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    margin:5px auto;
+    background: red;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+}
+
+/* 搜索栏结束 */
+
+/* 侧栏开始 */
+.left-banner{
+    width: 37px;
+    height:360px;
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    background: #ccc;
+    z-index: 99999;
+    transform: scale(0,0);
+    transform-origin: left bottom;
+    transition: all 1s ease;
+}
+
+.left-ban{
+    width: 36px;
+    height: 36px;
+    border: 1px solid #fff;
+    line-height: 18px;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* 侧栏结束 */
