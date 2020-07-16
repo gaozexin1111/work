@@ -284,6 +284,7 @@ body{
     position: relative;
     height: 500px;
     width: 100%;
+    background: #ccc;
 }
 .category-inner-con{
     width: 1230px;
@@ -373,12 +374,59 @@ body{
 .xianshi{
     width: 500px;
     height: 500px;
-    background: orange;
     position: absolute;
     left: 200px;
     top: 0;
     opacity: 0;
     font-size: 30px;
+}
+.xianshi:nth-child(1){
+    background: orange;
+}
+.xianshi:nth-child(2){
+    background: pink;
+}
+.xianshi:nth-child(3){
+    background: orange;
+}
+.xianshi:nth-child(4){
+    background: pink;
+}
+.xianshi:nth-child(5){
+    background: orange;
+}
+.xianshi:nth-child(6){
+    background: pink;
+}
+.xianshi:nth-child(7){
+    background: orange;
+}
+.xianshi:nth-child(8){
+    background: pink;
+}
+.xianshi:nth-child(9){
+    background: orange;
+}
+.xianshi:nth-child(10){
+    background: pink;
+}
+.xianshi:nth-child(11){
+    background: orange;
+}
+.xianshi:nth-child(12){
+    background: pink;
+}
+.xianshi:nth-child(13){
+    background: orange;
+}
+.xianshi:nth-child(14){
+    background: pink;
+}
+.xianshi:nth-child(15){
+    background: orange;
+}
+.xianshi:nth-child(16){
+    background: pink;
 }
 
 

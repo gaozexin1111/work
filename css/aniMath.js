@@ -57,6 +57,7 @@ function css(obj,attr,val){
             case "background":
             case "color":
             case "border":
+            case "zIndex":
                 return getComputedStyle(obj,null)[attr];
                 break;
             default:
@@ -68,6 +69,7 @@ function css(obj,attr,val){
             case "color":
             case "opacity":
             case "border":
+            case "zIndex":
                 obj.style[attr]=val
                 break;
             default:
